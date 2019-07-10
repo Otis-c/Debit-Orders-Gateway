@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/Debit-Orders-Gateway/v16
+/DebitOrdersApi/bin/Debug/netcoreapp2.2
+/DebitOrdersApi/obj
+/.vs/Debit-Orders-Gateway/DesignTimeBuild
+/.vs/Debit-Orders-Gateway/config
+/src/DebitOrdersApi/bin/Debug/netcoreapp2.2
+/src/DebitOrdersApi/obj
