@@ -1,16 +1,16 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DebitOrdersApi.Features.DebitOrders.Commands
+namespace DebitOrdersApi.Models
 {
-    public class ImportDebitOrders : IRequest
+    public class DebitInstruction
     {
+        public int Id { get; set; }
         public string AccountName { get; set; }
-        public string IdNumber { get; set; }
+        public string IDNumber { get; set; }
         public string AccountNumber { get; set; }
         public string BranchCode { get; set; }
         public string BankCode { get; set; }
@@ -18,5 +18,6 @@ namespace DebitOrdersApi.Features.DebitOrders.Commands
         public string DebitNarration { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public string Creditor { get; set; }
     }
 }

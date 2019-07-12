@@ -1,3 +1,34 @@
-<p>
-  debit-order-list works!
-</p>
+
+<div class="card">
+  <div class="card-body">
+      <h4 class="card-title">Debit instructions</h4>
+      <table class="table table-striped table-hover table-sm mb-0">
+          <thead>
+          <tr>
+              <th>Account Name</th>
+              <th>ID No.</th>
+              <th>Account Number</th>
+              <th>Bank</th>
+              <th>Branch Code</th>
+              <th>Amount</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Creditor</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of instructions">
+              <td>{{ i.accountName }}</td>
+              <td>{{ i.iDNumber }}</td>
+              <td>{{ i.accountNumber }}</td>
+              <td>{{ i.bankCode }}</td>
+              <td>{{ i.branchCode }}</td>
+              <td>{{ i.debitAmount }}</td>
+              <td>{{ i.startDate | date:'dd/MM/yyyy' }}</td>
+              <td>{{ i.endDate | date:'dd/MM/yyyy'}}</td>
+              <td>{{ i.creditor }}</td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

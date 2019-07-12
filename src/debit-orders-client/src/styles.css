@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/vendors/material-design-iconic-font/css/material-design-iconic-font.min.css";
+@import "assets/vendors/animate.css/animate.min.css";
+@import "assets/vendors/jquery-scrollbar/jquery.scrollbar.css";
+@import "assets/css/app.min.css";
+@import "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"

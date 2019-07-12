@@ -1,3 +1,24 @@
-<p>
-  import-debit-orders works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Upload Instructions</h4>
+
+    <form [formGroup]="debitOrderForm" (ngSubmit)="onDebitOrderSubmit()">
+      <div class="form-row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="form-group">
+            <label>File</label>
+            <input type="file" (change)="onFileChange($event)" class="form-control" formControlName="accountName">
+            <i class="form-group__bar"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-lg-4 col-md-6 col-sm-12 offset-lg-4 offset-md-3">
+          <button type="button" (click)="submitFile()" class="btn btn-primary btn-block">Upload</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

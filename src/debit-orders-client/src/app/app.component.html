@@ -12,7 +12,26 @@
   <app-side-bar></app-side-bar>
   <section class="content">
     <div class="content__inner">
-      <app-create-debit-orders></app-create-debit-orders>
+      <header class="content__title">
+        <h1>New Debit Order</h1>
+
+        <div class="actions">
+          <a href="" class="actions__item zmdi zmdi-trending-up"></a>
+          <a href="" class="actions__item zmdi zmdi-check-all"></a>
+
+          <div class="dropdown actions__item">
+            <i data-toggle="dropdown" class="zmdi zmdi-more-vert" aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end"
+              style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(30px, 26px, 0px);">
+              <a href="" class="dropdown-item">Refresh</a>
+              <a href="" class="dropdown-item">Manage Widgets</a>
+              <a href="" class="dropdown-item">Settings</a>
+            </div>
+          </div>
+        </div>
+
+      </header>
+      <router-outlet></router-outlet>
     </div>
   </section>
 </main>
