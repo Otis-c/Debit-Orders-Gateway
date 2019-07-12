@@ -29,6 +29,8 @@ namespace DebitOrdersApi
             services.AddDbContext<DataContext>(
                 x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
