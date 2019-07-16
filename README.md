@@ -38,6 +38,12 @@ Follow these steps to get your development environment set up:
   
   6. Launch [http://localhost:5000/swagger](http://localhost:5000/swagger) in your browser to view the API
   
+## Features
+
+* Add a debit instruction manually
+* View Added debit Orders
+* Import Debit Orders from a file. Use the test.xlsx in the root folder
+  
 
 
 ## Technologies
