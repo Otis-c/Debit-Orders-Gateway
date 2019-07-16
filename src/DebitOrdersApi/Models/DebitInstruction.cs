@@ -18,6 +18,7 @@ namespace DebitOrdersApi.Models
         public string DebitNarration { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public int ProcessingDay { get; set; }
         public string Creditor { get; set; }
     }
 }

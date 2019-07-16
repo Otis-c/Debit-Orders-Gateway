@@ -21,6 +21,7 @@ namespace DebitOrdersApi.Features.DebitOrders.Commands
         public string DebitNarration { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public int ProcessDay { get; set; }
         public string Creditor { get; set; }
     }
 
@@ -44,6 +45,7 @@ namespace DebitOrdersApi.Features.DebitOrders.Commands
                 DebitNarration = request.DebitNarration,
                 StartDate = request.StartDate,
                 EndDate = request.EndDate,
+                ProcessingDay = request.ProcessDay,
                 Creditor = request.Creditor
             };
 

@@ -31,6 +31,7 @@ export class CreateDebitOrdersComponent implements OnInit {
       debitNarration: ['', Validators.required],
       startDate: [new Date(), Validators.required],
       endDate: [new Date(), Validators.required],
+      processingDay: ['', Validators.required],
       creditor: ['', Validators.required]
     });
   }

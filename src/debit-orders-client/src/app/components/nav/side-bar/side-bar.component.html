@@ -17,9 +17,18 @@
       </div>
 
       <ul class="navigation">
-          <li><a routerLink="/debitOrders"><i class="zmdi zmdi-home"></i> Debit Orders</a></li>
-          <li><a routerLink="/newInstruction"><i class="zmdi zmdi-format-underlined"></i> New Debit Order</a></li>
-          <li><a routerLink="/import"><i class="zmdi zmdi-format-underlined"></i> Import</a></li>
+          <li><a routerLink="/debitOrders"><i class="zmdi zmdi-format-list-bulleted"></i> Debit Orders</a></li>
+          <li><a routerLink="/newInstruction"><i class="zmdi zmdi-file-plus"></i> New Debit Order</a></li>
+          <li><a routerLink="/import"><i class="zmdi zmdi-upload"></i> Import</a></li>
+          <li class="navigation__sub navigation__sub--active navigation__sub--toggled">
+              <a href=""><i class="zmdi zmdi-collection-text"></i> Setup</a>
+
+              <ul style="">
+                  <li><a [routerLink]="[ '/setup/banks']">Banks</a></li>
+                  <li><a href="form-layouts.html">Form Layouts</a></li>
+                  <li><a href="form-validation.html">Form Validation</a></li>
+              </ul>
+          </li>
 
       </ul>
   </div>

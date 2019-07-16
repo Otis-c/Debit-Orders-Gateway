@@ -17,6 +17,8 @@ import { appRoutes } from './routes';
 import { DebitOrdersService } from './_services/debit-orders.service';
 import { DebitOrderListComponent } from './components/debit-orders/debit-order-list/debit-order-list.component';
 import { ImportDebitOrdersComponent } from './components/debit-orders/import-debit-orders/import-debit-orders.component';
+import { ViewBankComponent } from './components/setup/banks/view-bank/view-bank.component';
+import { BankListComponent } from './components/setup/banks/bank-list/bank-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ImportDebitOrdersComponent } from './components/debit-orders/import-deb
     LoginComponent,
     CreateDebitOrdersComponent,
     DebitOrderListComponent,
-    ImportDebitOrdersComponent
+    ImportDebitOrdersComponent,
+    ViewBankComponent,
+    BankListComponent,
   ],
   imports: [
     BrowserModule,

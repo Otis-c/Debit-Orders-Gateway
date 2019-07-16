@@ -4,14 +4,16 @@ using DebitOrdersApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DebitOrdersApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190712220925_creditors")]
+    partial class creditors
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace DebitOrdersApi.Migrations
 
                     b.HasIndex("BankId");
 
-                    b.ToTable("Branches");
+                    b.ToTable("MyProperty");
                 });
 
             modelBuilder.Entity("DebitOrdersApi.Models.Creditor", b =>
@@ -61,15 +63,15 @@ namespace DebitOrdersApi.Migrations
 
                     b.Property<string>("AccountNumber");
 
-                    b.Property<int>("BankCode");
-
-                    b.Property<int>("BranchCode");
+                    b.Property<int>("BankId");
 
                     b.Property<string>("Code");
 
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BankId");
 
                     b.ToTable("Creditors");
                 });
@@ -111,6 +113,14 @@ namespace DebitOrdersApi.Migrations
                 {
                     b.HasOne("DebitOrdersApi.Models.Bank", "Bank")
                         .WithMany("Branches")
+                        .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DebitOrdersApi.Models.Creditor", b =>
+                {
+                    b.HasOne("DebitOrdersApi.Models.Bank", "Bank")
+                        .WithMany()
                         .HasForeignKey("BankId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

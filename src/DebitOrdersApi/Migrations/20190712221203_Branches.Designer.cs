@@ -4,14 +4,16 @@ using DebitOrdersApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DebitOrdersApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190712221203_Branches")]
+    partial class Branches
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,15 +63,19 @@ namespace DebitOrdersApi.Migrations
 
                     b.Property<string>("AccountNumber");
 
-                    b.Property<int>("BankCode");
+                    b.Property<int>("BankId");
 
-                    b.Property<int>("BranchCode");
+                    b.Property<int>("BranchId");
 
                     b.Property<string>("Code");
 
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BankId");
+
+                    b.HasIndex("BranchId");
 
                     b.ToTable("Creditors");
                 });
@@ -112,6 +118,19 @@ namespace DebitOrdersApi.Migrations
                     b.HasOne("DebitOrdersApi.Models.Bank", "Bank")
                         .WithMany("Branches")
                         .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DebitOrdersApi.Models.Creditor", b =>
+                {
+                    b.HasOne("DebitOrdersApi.Models.Bank", "Bank")
+                        .WithMany()
+                        .HasForeignKey("BankId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DebitOrdersApi.Models.Branch", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
