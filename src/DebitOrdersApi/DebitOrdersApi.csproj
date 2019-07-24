@@ -6,9 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Branches\**" />
     <Compile Remove="Features\DebitOrders\NewFolder\**" />
+    <Content Remove="Features\Branches\**" />
     <Content Remove="Features\DebitOrders\NewFolder\**" />
+    <EmbeddedResource Remove="Features\Branches\**" />
     <EmbeddedResource Remove="Features\DebitOrders\NewFolder\**" />
+    <None Remove="Features\Branches\**" />
     <None Remove="Features\DebitOrders\NewFolder\**" />
   </ItemGroup>
 
@@ -19,6 +23,7 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
   </ItemGroup>
 

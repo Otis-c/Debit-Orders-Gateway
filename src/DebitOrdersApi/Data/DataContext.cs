@@ -10,6 +10,8 @@ namespace DebitOrdersApi.Data
 {
     public class DataContext : DbContext
     {
+        internal object branches;
+
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Bank> Banks { get; set; }
